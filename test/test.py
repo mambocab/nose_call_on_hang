@@ -3,17 +3,15 @@ Run with helper that loads plugin under test.
 """
 from __future__ import print_function
 
-import time
+import logging
 import sys
+import time
 import unittest
 
-import logging
 from mock import MagicMock
 from nose.plugins import PluginTester
-from nose.tools import assert_false, assert_true, assert_is_not, assert_is
-
+from nose.tools import assert_false, assert_is, assert_is_not, assert_true
 from nose_call_on_hang.nose_call_on_hang import CallOnHang
-
 
 log = logging.getLogger(__name__)
 
