@@ -27,9 +27,10 @@ class CallOnHang(Plugin):
     enabled = False
     score = 2000  # run before all builtin plugins
 
-    def __init__(self, timers=None):
+    def __init__(self, timers=None, enabled=False):
         super(CallOnHang, self).__init__()
         self._timers = [] if timers is None else list(timers)
+        self.enabled = enabled
 
     def register_timer(self, timer):
         self._timers.append(timer)
