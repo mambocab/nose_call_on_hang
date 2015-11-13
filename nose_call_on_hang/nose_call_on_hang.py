@@ -16,7 +16,7 @@ class _WrappedWriter(object):
 
     def write(self, *args, **kwargs):
         log.debug('writing, calling {} first'.format(self._func.__name__))
-        self._func(*args, **kwargs)
+        self._func()
         self._file.write(*args, **kwargs)
 
     def __getattr__(self, attr):
