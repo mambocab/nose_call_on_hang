@@ -40,9 +40,10 @@ class CallOnHang(Plugin):
     @property
     def timers(self):
         """
-        Get a tuple of the timers set for this plugin.
+        Iterate over the timers registered with this plugin.
         """
-        return tuple(self._timers)
+        for t in self._timers:
+            yield t
 
     def begin(self):
         log.debug('Patching stdout with wrapper object')
